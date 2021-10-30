@@ -40,11 +40,30 @@
             <button type="submit">Calculate</button>
           </form>
         </section>
-
-        <section id="result" class="container">
-          <p></p>
-        </section>
       </main>
+
+      <section class="result">
+        <div class="priceDetails">
+          <div class="resultHolder">
+            <p>Demand at this price</p>
+            <p class="demand display"></p>
+          </div>
+
+          <div class="resultHolder">
+            <p>Supply at this price</p>
+            <p class="supply display"></p>
+          </div>
+
+          <div class="resultHolder">
+            <p>Revenue at this price</p>
+            <p class="revenue display"></p>
+          </div>
+        </div>
+
+        <div class="messageHolder">
+          <p class="message"></p>
+        </div>
+      </section>
     </div>
     <script src="equilibriumCalculations.js"></script>
   </body>

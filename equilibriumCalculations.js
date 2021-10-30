@@ -9,6 +9,11 @@ const Bsupply = 8000;
 let consumption;
 let supply;
 let message;
+const demandAtPrice = document.querySelector(".demand");
+const supplyAtPrice = document.querySelector(".supply");
+const revenueAtPrice = document.querySelector(".revenue");
+const answerStatement = document.querySelector(".message");
+const answerHolder = document.querySelector(".messageHolder");
 
 const priceForm = document
   .querySelector(".priceForm")
@@ -53,18 +58,23 @@ function calculateOutput() {
 
   const revenue = consumption * price;
 
-  document.getElementById("result").innerText =
-    // "XYZ Widgets sold:" +
-    // consumption +
-    // "/month<br>Revenue:" +
-    // revenue +
-    // "/month<br><br>" +
-    // message;
-    `Units sold at this price: ${consumption}
-    Supply of units at this price: ${supply}
-    Revenue: $${revenue}
-    ${message}
-    `;
+  // document.getElementById("result").innerText =
+  //   // "XYZ Widgets sold:" +
+  //   // consumption +
+  //   // "/month<br>Revenue:" +
+  //   // revenue +
+  //   // "/month<br><br>" +
+  //   // message;
+  //   `Units sold at this price: ${consumption}
+  //   Supply of units at this price: ${supply}
+  //   Revenue: $${revenue}
+  //   ${message}
+  //   `;
+  demandAtPrice.innerText = `${consumption} units`;
+  supplyAtPrice.innerText = `${supply} units`;
+  revenueAtPrice.innerText = `$${revenue}`;
+  answerStatement.innerText = message;
+  answerHolder.classList.add("expand");
 
   console.log(message, consumption, supply);
 }
