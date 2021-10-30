@@ -1,41 +1,46 @@
 // Equilibrium Price Equations:
 //   Qsupply = Msupply * price + Bsupply
-//   Qdemand = Mdemand * price + Bdemand
+//   consumption = Mdemand * price + Bdemand
 
-var Mdemand = -1000;
-var Bdemand = 10000;
-var Msupply = 0; // what if ABC can hire more people when price goes up?
-var Bsupply = 8000;
-var consumption;
-var supply;
-var message;
+const Mdemand = -1000;
+const Bdemand = 15000; // Changed value so equlibrium price isnt at "2"
+const Msupply = 0; // what if ABC can hire more people when price goes up?
+const Bsupply = 8000;
+let consumption;
+let supply;
+let message;
 
-document.getElementById("calculate").addEventListener("click", calculateOutput);
+const priceForm = document
+  .querySelector(".priceForm")
+  .addEventListener("submit", (e) => {
+    e.preventDefault();
+    calculateOutput();
+  });
 
 function calculateOutput() {
-  var price;
-  var priceOptions = document.getElementsByName("price");
-
+  // let price;
+  const price = document.getElementById("price").value;
+  // let price = priceOptions.value;
   message = "";
 
-  for (var i = 1; i < priceOptions.length; i++) {
-    if (priceOptions[i].checked) {
-      price = priceOptions[i].value;
-      break;
-    }
-  }
+  // for (let i = 1; i < priceOptions.length; i++) {
+  //   if (priceOptions[i].checked) {
+  //     price = priceOptions[i].value;
+  //     break;
+  //   }
+  // }
 
   consumption = price * Mdemand + Bdemand;
   supply = price * Msupply + Bsupply;
 
   if (consumption > supply) {
-    consumption = supply;
-    message = "ABC Company canot make enough XYZ Widgets";
-  }
-
-  if (consumption <= 0) {
-    consumption = 0;
-    message = "No one will buy XYZ Widgets at this price";
+    // consumption = supply;
+    message = "ABC Company cannot make enough XYZ Widgets to meet demand";
+  } else if (consumption < supply) {
+    message = "ABC Company is making too many XYZ widgets relative to demand";
+  } else if (consumption === supply) {
+    // consumption = 0;
+    message = "You found the Equilibrium Price";
   }
 
   /*
@@ -44,7 +49,7 @@ function calculateOutput() {
 			}
 			*/
 
-  revenue = consumption * price;
+  const revenue = consumption * price;
 
   document.getElementById("result").innerHTML =
     "XYZ Widgets sold:" +
@@ -53,4 +58,6 @@ function calculateOutput() {
     revenue +
     "/month<br><br>" +
     message;
+
+  console.log(message, consumption, supply);
 }
