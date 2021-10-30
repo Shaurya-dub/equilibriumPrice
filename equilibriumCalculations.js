@@ -35,9 +35,11 @@ function calculateOutput() {
 
   if (consumption > supply) {
     // consumption = supply;
-    message = "ABC Company cannot make enough XYZ Widgets to meet demand";
+    const deficit = consumption - supply;
+    message = `ABC Company is making ${deficit} less XYZ widgets relative to demand at this price`;
   } else if (consumption < supply) {
-    message = "ABC Company is making too many XYZ widgets relative to demand";
+    const surplus = supply - consumption;
+    message = `ABC Company is making ${surplus} more XYZ widgets relative to demand`;
   } else if (consumption === supply) {
     // consumption = 0;
     message = "You found the Equilibrium Price";
@@ -51,13 +53,18 @@ function calculateOutput() {
 
   const revenue = consumption * price;
 
-  document.getElementById("result").innerHTML =
-    "XYZ Widgets sold:" +
-    consumption +
-    "/month<br>Revenue:" +
-    revenue +
-    "/month<br><br>" +
-    message;
+  document.getElementById("result").innerText =
+    // "XYZ Widgets sold:" +
+    // consumption +
+    // "/month<br>Revenue:" +
+    // revenue +
+    // "/month<br><br>" +
+    // message;
+    `Units sold at this price: ${consumption}
+    Supply of units at this price: ${supply}
+    Revenue: $${revenue}
+    ${message}
+    `;
 
   console.log(message, consumption, supply);
 }
