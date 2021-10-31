@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  //   background-color: green;
 }
 
 .priceDetails {
@@ -15,8 +14,6 @@
 
 .resultHolder,
 .messageHolder {
-  //   border: 2px solid #f07167;
-
   border-radius: 15px;
   background-color: #e63946;
   color: white;
@@ -33,7 +30,6 @@
 
 .messageHolder {
   width: 0px;
-  //   display: none;
   transition: all 0.3s ease;
 }
 
@@ -41,11 +37,13 @@
   width: auto;
   padding: 20px;
   display: block;
-  //   transition: all 0.3s ease;
+}
+.messageHolder.correctAnswer {
+  background-color: #26a826;
+  color: white;
 }
 
 .display {
-  //   width: 50px;
   padding: 20px;
   color: #1d3557;
 }

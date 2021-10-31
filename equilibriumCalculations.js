@@ -15,51 +15,21 @@ const supplyAtPrice = document.querySelector(".supply");
 const revenueAtPrice = document.querySelector(".revenue");
 const answerStatement = document.querySelector(".message");
 const answerHolder = document.querySelector(".messageHolder");
-const expanderButton = document.querySelectorAll(".expanderButton");
+const expanderButton = document.querySelector(".expanderButton");
 
 // ***** Function to expand/collapse additional info div *****
-const expanderFunction = (btn) => {
+const expanderFunction = () => {
   document.querySelector(".moreInfo").classList.toggle("showDisplay");
-  btn.classList.toggle("rotate");
+  expanderButton.classList.toggle("rotate");
 };
 
-// Assigning expand/collapse function to "click" AND "keypress" events to make it accessible for keyboard only users
-expanderButton.forEach((button) => {
-  button.addEventListener("click", () => {
-    expanderFunction(button);
-  });
-  button.addEventListener("keypress", (e) => {
-    e.key === "Enter" ? expanderFunction(button) : "";
-  });
-});
-
-// Assigning expand/collapse function to "click" AND "keypress" events to make it accessible for keyboard only users
-// expanderButton.addEventListener("click", expanderFunction);
-// expanderButton.addEventListener("keypress", (e) => {
-//   e.key === "Enter" ? expanderFunction() : "";
-// });
-// ***** Assigning calculate function to submit button *****
-const priceForm = document
-  .querySelector(".priceForm")
-  .addEventListener("submit", (e) => {
-    e.preventDefault();
-    calculateOutput();
-  });
+// ***** Assigning expand/collapse function to expander button *****
+expanderButton.addEventListener("click", expanderFunction);
 
 // ***** Function so calculate Equilibrium price, and display results *****
 function calculateOutput() {
   const price = document.querySelector(".price").value;
-  // let price;
-  // let price = priceOptions.value;
   message = "";
-
-  // for (let i = 1; i < priceOptions.length; i++) {
-  //   if (priceOptions[i].checked) {
-  //     price = priceOptions[i].value;
-  //     break;
-  //   }
-  // }
-
   consumption = price * Mdemand + Bdemand;
   supply = price * Msupply + Bsupply;
 
@@ -67,39 +37,29 @@ function calculateOutput() {
     // consumption = supply;
     const deficit = consumption - supply;
     message = `ABC Company is making ${deficit} less XYZ widgets relative to demand at this price`;
+    answerHolder.classList.remove("correctAnswer");
   } else if (consumption < supply) {
     const surplus = supply - consumption;
     message = `ABC Company is making ${surplus} more XYZ widgets relative to demand`;
+    answerHolder.classList.remove("correctAnswer");
   } else if (consumption === supply) {
-    // consumption = 0;
     message = "You found the Equilibrium Price";
+    answerHolder.classList.add("correctAnswer");
   }
-
-  /*
-			if (maxRevenue) {
-				message = "This is the equilibrium price"
-			}
-			*/
 
   const revenue = consumption * price;
 
-  // document.getElementById("result").innerText =
-  //   // "XYZ Widgets sold:" +
-  //   // consumption +
-  //   // "/month<br>Revenue:" +
-  //   // revenue +
-  //   // "/month<br><br>" +
-  //   // message;
-  //   `Units sold at this price: ${consumption}
-  //   Supply of units at this price: ${supply}
-  //   Revenue: $${revenue}
-  //   ${message}
-  //   `;
   demandAtPrice.innerText = `${consumption} units`;
   supplyAtPrice.innerText = `${supply} units`;
   revenueAtPrice.innerText = `$${revenue}`;
   answerStatement.innerText = message;
   answerHolder.classList.add("expand");
-
-  console.log(message, consumption, supply);
 }
+
+// ***** Assigning calculate function to submit button *****
+const priceForm = document
+  .querySelector(".priceForm")
+  .addEventListener("submit", (e) => {
+    e.preventDefault();
+    calculateOutput();
+  });

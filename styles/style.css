@@ -265,11 +265,13 @@ html {
 }
 
 h1 {
-  color: #0081a7;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background-color: #f1faee;
+  background-color: #142947;
 }
 
 header {
@@ -357,10 +359,13 @@ img {
 }
 
 .expanderButton {
-  display: inline-block;
-  width: 100%;
+  margin: auto;
+  display: block;
+  align-self: center;
   text-align: center;
   font-size: 1.5rem;
+  background-color: transparent;
+  border: transparent;
   color: #c5303c;
   transition: all 0.3s ease;
 }
@@ -372,11 +377,6 @@ img {
 @media (max-width: 750px) {
   .infoImageHolder {
     width: 100%;
-  }
-}
-@media (max-width: 640px) {
-  .excerciseInfo {
-    font-size: 1.3rem;
   }
 }
 @media (max-width: 550px) {
@@ -428,6 +428,11 @@ img {
   width: auto;
   padding: 20px;
   display: block;
+}
+
+.messageHolder.correctAnswer {
+  background-color: #26a826;
+  color: white;
 }
 
 .display {

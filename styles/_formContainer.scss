@@ -1,6 +1,5 @@
 .introCard {
   background-color: #fffffff5;
-  // color: #1d3557;
   width: 80%;
   margin: auto;
   padding: 20px 40px;
@@ -12,7 +11,6 @@
   font-size: 1.5rem;
 }
 .priceForm {
-  // margin: auto;
   background-color: #457b9d;
   color: #f1faee;
   margin-bottom: 30px;
@@ -52,24 +50,21 @@
   color: #142947;
   font-size: 1.1rem;
   max-height: 0;
-  // margin: auto;
   overflow: hidden;
-  // display: none;
   transition: all 0.3s linear;
 }
 .moreInfo.showDisplay {
-  // display: initial;
   max-height: 1600px;
 }
 
 .expanderButton {
-  // margin: auto;
-  display: inline-block;
-  width: 100%;
-  // align-self: center;
+  margin: auto;
+  display: block;
+  align-self: center;
   text-align: center;
   font-size: 1.5rem;
-  // background-color: red;
+  background-color: transparent;
+  border: transparent;
   color: #c5303c;
   transition: all 0.3s ease;
 }
@@ -82,12 +77,6 @@
 @media (max-width: 750px) {
   .infoImageHolder {
     width: 100%;
-  }
-}
-
-@media (max-width: 640px) {
-  .excerciseInfo {
-    font-size: 1.3rem;
   }
 }
 

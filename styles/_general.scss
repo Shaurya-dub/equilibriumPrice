@@ -1,21 +1,16 @@
 h1 {
-  color: #0081a7;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
 }
+// Giving body a dark background color, in case video background doesn't load.
 body {
-  background-color: #f1faee;
+  background-color: #142947;
 }
 
 header {
   margin-bottom: 100px;
 }
-
-// main {
-//   background-color: #457b9d;
-//   width: 80%;
-//   margin: auto;
-//   padding: 40px;
-//   border-radius: 15px;
-// }
 
 img {
   width: 100%;
