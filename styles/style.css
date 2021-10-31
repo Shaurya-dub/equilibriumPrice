@@ -344,6 +344,7 @@ img {
   width: 70%;
   margin: auto;
   border: 1px solid #1d3557;
+  text-align: center;
 }
 
 .moreInfo {
@@ -421,7 +422,7 @@ img {
 
 .messageHolder {
   width: 0px;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .messageHolder.expand {
@@ -437,5 +438,5 @@ img {
 
 .display {
   padding: 20px;
-  color: #1d3557;
+  color: #eeeef0;
 }/*# sourceMappingURL=style.css.map */

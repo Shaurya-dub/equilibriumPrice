@@ -4,7 +4,7 @@
 
 // ***** Variables *****
 const Mdemand = -1000;
-const Bdemand = 15000; // Changed value so equlibrium price isnt at "2"
+const Bdemand = 15000; // Changed value so equilibrium price isn't at "2"
 let Msupply = 0; // what if ABC can hire more people when price goes up?
 const Bsupply = 8000;
 let consumption;
