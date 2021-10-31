@@ -319,8 +319,14 @@ img {
 
 .moreInfo {
   color: white;
-  transition: all 0.3s ease;
   font-size: 1.1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.moreInfo.showDisplay {
+  max-height: 500px;
 }
 
 .result {

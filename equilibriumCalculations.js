@@ -14,6 +14,7 @@ const supplyAtPrice = document.querySelector(".supply");
 const revenueAtPrice = document.querySelector(".revenue");
 const answerStatement = document.querySelector(".message");
 const answerHolder = document.querySelector(".messageHolder");
+const expanderButton = document.querySelector(".expanderButton");
 
 const priceForm = document
   .querySelector(".priceForm")
@@ -78,3 +79,7 @@ function calculateOutput() {
 
   console.log(message, consumption, supply);
 }
+
+expanderButton.addEventListener("click", () => {
+  document.querySelector(".moreInfo").classList.toggle("showDisplay");
+});
