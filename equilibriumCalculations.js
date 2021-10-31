@@ -2,6 +2,7 @@
 //   Qsupply = Msupply * price + Bsupply
 //   consumption = Mdemand * price + Bdemand
 
+// ***** Variables *****
 const Mdemand = -1000;
 const Bdemand = 15000; // Changed value so equlibrium price isnt at "2"
 let Msupply = 0; // what if ABC can hire more people when price goes up?
@@ -16,6 +17,12 @@ const answerStatement = document.querySelector(".message");
 const answerHolder = document.querySelector(".messageHolder");
 const expanderButton = document.querySelector(".expanderButton");
 
+// ***** Function to expand/collapse additional info div *****
+expanderButton.addEventListener("click", () => {
+  document.querySelector(".moreInfo").classList.toggle("showDisplay");
+});
+
+// ***** Assigning calculate function to submit button *****
 const priceForm = document
   .querySelector(".priceForm")
   .addEventListener("submit", (e) => {
@@ -23,6 +30,7 @@ const priceForm = document
     calculateOutput();
   });
 
+// ***** Function so calculate Equilibrium price, and display results *****
 function calculateOutput() {
   const price = document.querySelector(".price").value;
   // let price;
@@ -79,7 +87,3 @@ function calculateOutput() {
 
   console.log(message, consumption, supply);
 }
-
-expanderButton.addEventListener("click", () => {
-  document.querySelector(".moreInfo").classList.toggle("showDisplay");
-});

@@ -2,7 +2,7 @@
   background-color: #457b9d;
   width: 80%;
   margin: auto;
-  padding: 40px;
+  padding: 20px 40px;
   border-radius: 15px;
 }
 
@@ -11,11 +11,21 @@
   font-size: 1.5rem;
 }
 .priceForm {
-  margin-bottom: 20px;
+  // margin: auto;
+  margin-bottom: 30px;
+  background-color: #e63946;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 40%;
+  min-width: 220px;
 }
 
 .infoImageHolder {
-  width: 50%;
+  width: 70%;
   margin: auto;
 }
 
@@ -23,12 +33,40 @@
   color: white;
   font-size: 1.1rem;
   max-height: 0;
+  // margin: auto;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.4s linear;
 }
 .moreInfo.showDisplay {
-  max-height: 500px;
+  max-height: 1600px;
 }
 
-// .moreInfo.hideDisplay {
-// }
+.expanderButton {
+  margin: auto;
+  display: block;
+  // align-self: center;
+}
+
+// ***** Responsive Styling *****
+@media (max-width: 750px) {
+  .infoImageHolder {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .excerciseInfo {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .introCard {
+    padding: 30px 20px;
+    width: 90%;
+  }
+
+  .priceForm {
+    width: 100%;
+  }
+}

@@ -10,6 +10,7 @@
 .priceDetails {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .resultHolder,
@@ -27,6 +28,7 @@
 .priceDetails .resultHolder {
   padding: 20px;
   width: 30%;
+  min-width: 250px;
 }
 
 .messageHolder {
