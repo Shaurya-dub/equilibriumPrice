@@ -4,7 +4,7 @@
 
 const Mdemand = -1000;
 const Bdemand = 15000; // Changed value so equlibrium price isnt at "2"
-const Msupply = 0; // what if ABC can hire more people when price goes up?
+let Msupply = 0; // what if ABC can hire more people when price goes up?
 const Bsupply = 8000;
 let consumption;
 let supply;
@@ -23,8 +23,8 @@ const priceForm = document
   });
 
 function calculateOutput() {
+  const price = document.querySelector(".price").value;
   // let price;
-  const price = document.getElementById("price").value;
   // let price = priceOptions.value;
   message = "";
 

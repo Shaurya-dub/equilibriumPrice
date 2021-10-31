@@ -276,12 +276,17 @@ header {
   margin-bottom: 100px;
 }
 
-main {
-  background-color: #457b9d;
-  width: 80%;
-  margin: auto;
-  padding: 40px;
-  border-radius: 15px;
+img {
+  width: 100%;
+}
+
+.myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -99;
 }
 
 .wrapper {
@@ -290,9 +295,32 @@ main {
   margin: auto;
 }
 
+.introCard {
+  background-color: #457b9d;
+  width: 80%;
+  margin: auto;
+  padding: 40px;
+  border-radius: 15px;
+}
+
 .exerciseInfo {
   color: #fffefe;
   font-size: 1.5rem;
+}
+
+.priceForm {
+  margin-bottom: 20px;
+}
+
+.infoImageHolder {
+  width: 50%;
+  margin: auto;
+}
+
+.moreInfo {
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
 }
 
 .result {
@@ -314,7 +342,7 @@ main {
   background-color: #e63946;
   color: white;
   font-size: 1.3rem;
-  margin: 50px auto;
+  margin: 20px auto;
   text-align: center;
 }
 

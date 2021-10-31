@@ -8,12 +8,17 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+	  <!-- Video for animated background -->
+<video src="media/videoBackground.mp4" autoplay loop muted class="myVideo"></video> 
+
     <div class="wrapper">
       <header>
         <h1>Equilibrium Price</h1>
       </header>
       <main>
-        <section id="intro" class="exerciseInfo">
+	  <div class="introCard">
+
+        <section class="exerciseInfo">
           <p>
             ABC Company Inc. has just invented the XYZ Widget. A revolutionary
             product that will change the lives of everyone that buys it. In this
@@ -21,10 +26,10 @@
             equilibrium price for the new product.
           </p>
         </section>
-        <section id="input" class="container">
+        <section class="formContainer">
           <form class="priceForm">
             <label for="price">Select a price for XYZ widget</label>
-            <select name="price" id="price">
+            <select name="price" class="price">
               <option value="1">$1</option>
               <option value="2">$2</option>
               <option value="3">$3</option>
@@ -37,10 +42,25 @@
               <option value="10">$10</option>
             </select>
 
-            <button type="submit">Calculate</button>
+            <button type="submit" cla>Calculate</button>
+
           </form>
+		  <button>Tell me more</button>
+		  <div class="moreInfo hideDisplay">
+			  <div class="infoTextHolder">
+				  <h2>What is an Equilibrium price?</h2>
+				  <p>Also called a market-clearing price, the equilibrium price is the price at which the producer can sell all the units he wants to produce, and the buyer can buy all the units he wants.For a simple illustration of how supply and demand determine equilibrium price, imagine a business brings out a new product. It sets a high price, but only a few consumers buy it. The business anticipated selling more units, but due to lack of interest, it has warehouses full of the product. Due to its high supply, the business lowers the price. Demand increases, but as the business's supply dwindles, it raises the price until it finds the perfect price to balance its supply with consumer demand.  </p>
+			  </div>
+          <div class="infoImageHolder">
+            <img
+              src="media/equilibriumGraph.png"
+              alt="graph depicting equilibrium price"
+            />
+          </div>
+		  </div>
         </section>
-      </main>
+		</div>
+     
 
       <section class="result">
         <div class="priceDetails">
@@ -65,6 +85,7 @@
         </div>
       </section>
     </div>
+</main>
     <script src="equilibriumCalculations.js"></script>
   </body>
 </html>

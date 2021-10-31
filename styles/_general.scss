@@ -9,21 +9,27 @@ header {
   margin-bottom: 100px;
 }
 
-main {
-  background-color: #457b9d;
-  width: 80%;
-  margin: auto;
-  padding: 40px;
-  border-radius: 15px;
-}
+// main {
+//   background-color: #457b9d;
+//   width: 80%;
+//   margin: auto;
+//   padding: 40px;
+//   border-radius: 15px;
+// }
 
+img {
+  width: 100%;
+}
+.myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -99;
+}
 .wrapper {
   width: 90%;
   max-width: 1400px;
   margin: auto;
-}
-
-.exerciseInfo {
-  color: #fffefe;
-  font-size: 1.5rem;
 }
