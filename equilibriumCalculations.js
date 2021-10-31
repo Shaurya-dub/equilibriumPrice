@@ -15,13 +15,29 @@ const supplyAtPrice = document.querySelector(".supply");
 const revenueAtPrice = document.querySelector(".revenue");
 const answerStatement = document.querySelector(".message");
 const answerHolder = document.querySelector(".messageHolder");
-const expanderButton = document.querySelector(".expanderButton");
+const expanderButton = document.querySelectorAll(".expanderButton");
 
 // ***** Function to expand/collapse additional info div *****
-expanderButton.addEventListener("click", () => {
+const expanderFunction = (btn) => {
   document.querySelector(".moreInfo").classList.toggle("showDisplay");
+  btn.classList.toggle("rotate");
+};
+
+// Assigning expand/collapse function to "click" AND "keypress" events to make it accessible for keyboard only users
+expanderButton.forEach((button) => {
+  button.addEventListener("click", () => {
+    expanderFunction(button);
+  });
+  button.addEventListener("keypress", (e) => {
+    e.key === "Enter" ? expanderFunction(button) : "";
+  });
 });
 
+// Assigning expand/collapse function to "click" AND "keypress" events to make it accessible for keyboard only users
+// expanderButton.addEventListener("click", expanderFunction);
+// expanderButton.addEventListener("keypress", (e) => {
+//   e.key === "Enter" ? expanderFunction() : "";
+// });
 // ***** Assigning calculate function to submit button *****
 const priceForm = document
   .querySelector(".priceForm")

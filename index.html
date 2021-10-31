@@ -6,6 +6,7 @@
     <title>Equilibrium Price</title>
 
     <link rel="stylesheet" href="styles/style.css" />
+    <script src="https://kit.fontawesome.com/847ad40c99.js" crossorigin="anonymous"></script>
   </head>
   <body>
 	  <!-- Video for animated background -->
@@ -45,13 +46,18 @@
             <button type="submit">Calculate</button>
 
           </form>
-		  <button class="expanderButton">Tell me more</button>
+		  <!-- <button class="expanderButton">Tell me more</button> -->
+      <i class="fas fa-chevron-down expanderButton" tabindex="0"></i>
+      <button class="expanderButton sr-only" aria-describedby="description" >Tell me more</button>
+      <div id="description" class="sr-only">
+        Please press button to view additional information on equilibrium price
+      </div>
 		  <div class="moreInfo">
-			  <div class="infoTextHolder">
+			  <div class="infoTextHolder" >
 				  <h2>What is an Equilibrium price?</h2>
 				  <p>Also called a market-clearing price, the equilibrium price is the price at which the producer can sell all the units he wants to produce, and the buyer can buy all the units he wants.For a simple illustration of how supply and demand determine equilibrium price, imagine a business brings out a new product. It sets a high price, but only a few consumers buy it. The business anticipated selling more units, but due to lack of interest, it has warehouses full of the product. Due to its high supply, the business lowers the price. Demand increases, but as the business's supply dwindles, it raises the price until it finds the perfect price to balance its supply with consumer demand.  </p>
 			  </div>
-          <div class="infoImageHolder">
+          <div class="infoImageHolder" >
             <img
               src="media/equilibriumGraph.png"
               alt="graph depicting equilibrium price"
@@ -64,24 +70,24 @@
 
       <section class="result">
         <div class="priceDetails">
-          <div class="resultHolder">
+          <div class="resultHolder" >
             <p>Demand at this price</p>
-            <p class="demand display"></p>
+            <p class="demand display" ></p>
           </div>
 
-          <div class="resultHolder">
+          <div class="resultHolder" >
             <p>Supply at this price</p>
-            <p class="supply display"></p>
+            <p class="supply display" ></p>
           </div>
 
-          <div class="resultHolder">
+          <div class="resultHolder" >
             <p>Revenue at this price</p>
-            <p class="revenue display"></p>
+            <p class="revenue display" ></p>
           </div>
         </div>
 
         <div class="messageHolder">
-          <p class="message"></p>
+          <p class="message" ></p>
         </div>
       </section>
     </div>

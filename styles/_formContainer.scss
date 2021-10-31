@@ -1,5 +1,6 @@
 .introCard {
-  background-color: #457b9d;
+  background-color: #fffffff5;
+  // color: #1d3557;
   width: 80%;
   margin: auto;
   padding: 20px 40px;
@@ -7,13 +8,14 @@
 }
 
 .exerciseInfo {
-  color: #fffefe;
+  color: #1d3557;
   font-size: 1.5rem;
 }
 .priceForm {
   // margin: auto;
+  background-color: #457b9d;
+  color: #f1faee;
   margin-bottom: 30px;
-  background-color: #e63946;
   padding: 10px;
   border-radius: 15px;
   display: flex;
@@ -24,27 +26,56 @@
   min-width: 220px;
 }
 
+.priceForm button {
+  border: transparent;
+  background-color: #ffffff;
+  color: #1d3557;
+  border-radius: 10px;
+  padding: 5px;
+  transition: color 0.3s linear;
+}
+
+.priceForm button:hover,
+.priceForm button:focus-visible {
+  background-color: #1d3557;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .infoImageHolder {
   width: 70%;
   margin: auto;
+  border: 1px solid #1d3557;
 }
 
 .moreInfo {
-  color: white;
+  color: #142947;
   font-size: 1.1rem;
   max-height: 0;
   // margin: auto;
   overflow: hidden;
-  transition: max-height 0.4s linear;
+  // display: none;
+  transition: all 0.3s linear;
 }
 .moreInfo.showDisplay {
+  // display: initial;
   max-height: 1600px;
 }
 
 .expanderButton {
-  margin: auto;
-  display: block;
+  // margin: auto;
+  display: inline-block;
+  width: 100%;
   // align-self: center;
+  text-align: center;
+  font-size: 1.5rem;
+  // background-color: red;
+  color: #c5303c;
+  transition: all 0.3s ease;
+}
+
+.expanderButton.rotate {
+  transform: rotate(180deg);
 }
 
 // ***** Responsive Styling *****
